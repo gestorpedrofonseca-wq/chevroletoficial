@@ -9,17 +9,42 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./style.css?v=1.0.1">
 </head>
 
 <body>
     <div class="background-blur"></div>
     <div class="app-container">
+        <!-- Start Screen (required to allow audio on user interaction) -->
+        <div id="start-screen" class="screen active">
+            <div class="start-content">
+                <h1 class="start-title">
+                    Você confirma que deseja <span class="start-accent">ouvir agora</span> a <span class="start-accent">mensagem de voz da Chevrolet</span> antes do prazo expirar?
+                </h1>
+
+                <div class="start-volume">
+                    <i class="fa-solid fa-volume-high"></i>
+                </div>
+
+                <p class="start-subtitle">
+                    Aumente o volume do seu celular para uma melhor experiência
+                </p>
+            </div>
+            <div class="start-actions">
+                <button id="btn-start" class="start-btn" type="button">
+                    Iniciar Agora
+                </button>
+                <!-- <button id="btn-skip" class="start-skip" type="button">
+                    Já passei pela experiência.
+                </button> -->
+            </div>
+        </div>
+
         <!-- Incoming Call Screen -->
-        <div id="incoming-screen" class="screen active">
+        <div id="incoming-screen" class="screen">
             <div class="caller-info">
                 <div class="avatar-container">
-                    <img src="assets/img/profile.png" alt="Profile" class="avatar pulse">
+                    <img src="./assets/img/profile.png" alt="Profile" class="avatar pulse">
                 </div>
                 <h1 class="caller-name">
                     Chevrolet
@@ -29,7 +54,7 @@
             </div>
 
             <audio id="ringing-audio" loop preload="auto">
-                <source src="assets/audio/ringing.mp3" type="audio/mpeg">
+                <source src="./assets/audio/ringing.mp3" type="audio/mpeg">
                 <source src="https://www.soundjay.com/phone/sounds/telephone-ring-03a.mp3" type="audio/mpeg">
             </audio>
 
@@ -52,7 +77,7 @@
             </div>
 
             <div class="caller-info-active">
-                <img src="assets/img/profile.png" alt="Profile" class="avatar-small">
+                <img src="./assets/img/profile.png" alt="Profile" class="avatar-small">
                 <h2 class="caller-name-active">
                     Chevrolet
                     <i class="fa-solid fa-circle-check verified-icon shadow-icon"></i>
@@ -109,11 +134,11 @@
 
     <!-- Audio Element -->
     <audio id="call-audio" preload="auto">
-        <source src="assets/audio/voice.mp3" type="audio/mpeg">
+        <source src="./assets/audio/voice.mp3" type="audio/mpeg">
         Seu navegador não suporta áudio.
     </audio>
 
-    <script src="script.js"></script>
+    <script src="./script.js?v=1.0.1"></script>
 </body>
 
 </html>
