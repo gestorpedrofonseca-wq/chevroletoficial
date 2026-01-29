@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atendimento</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="background-blur"></div>
+    <div class="app-container">
+        <!-- Incoming Call Screen -->
+        <div id="incoming-screen" class="screen active">
+            <div class="caller-info">
+                <div class="avatar-container">
+                    <img src="./assets/img/profile.png" alt="Profile" class="avatar pulse">
+                </div>
+                <h1 class="caller-name">
+                    Chevrolet
+                    <i class="fa-solid fa-circle-check verified-icon"></i>
+                </h1>
+                <p class="caller-status">Mensagem de Voz Oficial para Clientes Chevrolet...</p>
+            </div>
+
+            <audio id="ringing-audio" loop preload="auto">
+                <source src="./assets/audio/ringing.mp3" type="audio/mpeg">
+                <source src="https://www.soundjay.com/phone/sounds/telephone-ring-03a.mp3" type="audio/mpeg">
+            </audio>
+
+            <div class="actions-incoming">
+                <div class="action-btn answer" id="btn-answer">
+                    <div class="circle-anim"></div>
+                    <div class="icon-container">
+                        <i class="fa-solid fa-phone"></i>
+                    </div>
+                    <span>Atender</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Call Screen -->
+        <div id="active-screen" class="screen">
+            <div class="call-header">
+                <i class="fa-solid fa-lock"></i>
+                <span>Criptografado de ponta-a-ponta</span>
+            </div>
+
+            <div class="caller-info-active">
+                <img src="./assets/img/profile.png" alt="Profile" class="avatar-small">
+                <h2 class="caller-name-active">
+                    Chevrolet
+                    <i class="fa-solid fa-circle-check verified-icon shadow-icon"></i>
+                </h2>
+                <p class="caller-number">+55 51 99285-6577</p>
+                <p id="call-timer">00:00</p>
+            </div>
+
+            <div class="grid-controls">
+                <div class="control-item">
+                    <i class="fa-solid fa-microphone-slash"></i>
+                    <span>Mudo</span>
+                </div>
+                <div class="control-item">
+                    <i class="fa-solid fa-keyboard"></i>
+                    <span>Teclado</span>
+                </div>
+                <div class="control-item">
+                    <i class="fa-solid fa-volume-high"></i>
+                    <span>Alto-falante</span>
+                </div>
+                <div class="control-item">
+                    <i class="fa-solid fa-plus"></i>
+                    <span>Adicionar</span>
+                </div>
+                <div class="control-item">
+                    <i class="fa-solid fa-video"></i>
+                    <span>Vídeo</span>
+                </div>
+                <div class="control-item">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Contato</span>
+                </div>
+            </div>
+
+            <div id="redirect-message"
+                style="display: none; text-align: center; margin-top: 20px; font-weight: 500; color: var(--accent-green);">
+                Redirecionando...
+            </div>
+
+            <div class="actions-active">
+                <div id="human-btn" class="human-service-btn" style="display: none;">
+                    Atendimento Humanizado
+                </div>
+                <div class="action-btn end-call" id="btn-end">
+                    <i class="fa-solid fa-phone-slash"></i>
+                </div>
+            </div>
+
+            <!-- Toast Notification -->
+            <div id="toast" class="toast">Botões apenas ilustrativos</div>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="call-audio" preload="auto">
+        <source src="./assets/audio/voice.mp3" type="audio/mpeg">
+        Seu navegador não suporta áudio.
+    </audio>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
